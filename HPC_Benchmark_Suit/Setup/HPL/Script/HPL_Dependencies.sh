@@ -26,4 +26,4 @@ echo "               All Dependencies For HPL Benchmark Downloaded              
 echo "-------------------------------------------------------------------------------"
 
 
-cd -
+#cd -
