@@ -2,7 +2,7 @@
 
 ROOT_DIR=$CURRENT_DIR/../Run/STREAM
 
-STREAM_PATH=$CURRENT_DIR/..//Setup/STREAM/Installation_Path
+STREAM_PATH=$CURRENT_DIR/../Setup/STREAM/Installation_Path
 
 FOLDER=$(date +'%Y-%m-%d_%H:%M:%S')
 

@@ -20,7 +20,7 @@ done
 if [ "$found" -eq 1 ]; then
    echo "Moving Old Benchmark Data"
    echo ""
-   mv $ROOT_DIR/Current_Benchmark/* $ROOT_DIR/HPL_Benchmarks/
+   mv $ROOT_DIR/Current_Benchmark/* $ROOT_DIR/HPCG_Benchmarks/
 
 else
    echo "NO Old Benchmark Data Found"
@@ -28,7 +28,7 @@ fi
 
 #-----------------------------------------------------------
 
-cp $HPCG_dat/hpcg.dat $ROOT_DIR/
+#cp $HPCG_dat/hpcg.dat $ROOT_DIR/
 
 read -p "Enter the number of MPI processes: " num_procs
 

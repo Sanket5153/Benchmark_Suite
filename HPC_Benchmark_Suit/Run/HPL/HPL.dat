@@ -5,11 +5,11 @@ HPL.out
 1            # of problems sizes (N)
 1000 Ns
 1            # of NBs
-2 NBs
+1 NBs
 0            PMAP process mapping (0=Row-,1=Column-major)
 1            # of process grids (P x Q)
-3 Ps
-4 Qs
+1 Ps
+2 Qs
 16.0         threshold
 3            # of panel fact
 2            PFACTs (0=left, 1=Crout, 2=Right)
