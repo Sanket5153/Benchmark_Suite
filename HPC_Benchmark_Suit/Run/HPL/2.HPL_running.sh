@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-ROOT_DIR=$CURRENT_DIR/../Run/HPL/
+ROOT_DIR="$CURRENT_DIR/../Run/HPL"
 
 cd $ROOT_DIR
 
