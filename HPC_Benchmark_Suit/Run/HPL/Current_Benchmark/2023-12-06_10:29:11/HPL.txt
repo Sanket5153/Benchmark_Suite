@@ -16,11 +16,11 @@ Gflops : Rate of execution for solving the linear system.
 
 The following parameter values will be used:
 
-N      :    1000 
-NB     :       1 
+N      :    2200 
+NB     :     200 
 PMAP   : Row-major process mapping
-P      :       1 
-Q      :       2 
+P      :       5 
+Q      :       5 
 PFACT  :   Right     Left     Left 
 NBMIN  :       2 
 NDIV   :       2 
@@ -44,33 +44,33 @@ ALIGN  : 8 double precision words
 ================================================================================
 T/V                N    NB     P     Q               Time                 Gflops
 --------------------------------------------------------------------------------
-WR11C2R2        1000     1     1     2               0.16             4.1422e+00
-HPL_pdgesv() start time Mon Dec  4 23:18:53 2023
+WR11C2R2        2200   200     5     5               0.31             2.3121e+01
+HPL_pdgesv() start time Wed Dec  6 10:29:29 2023
 
-HPL_pdgesv() end time   Mon Dec  4 23:18:53 2023
+HPL_pdgesv() end time   Wed Dec  6 10:29:30 2023
 
 --------------------------------------------------------------------------------
-||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   7.61567765e-03 ...... PASSED
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   3.94549720e-03 ...... PASSED
 ================================================================================
 T/V                N    NB     P     Q               Time                 Gflops
 --------------------------------------------------------------------------------
-WR11C2L2        1000     1     1     2               0.07             9.0436e+00
-HPL_pdgesv() start time Mon Dec  4 23:18:54 2023
+WR11C2L2        2200   200     5     5               0.05             1.3273e+02
+HPL_pdgesv() start time Wed Dec  6 10:29:30 2023
 
-HPL_pdgesv() end time   Mon Dec  4 23:18:54 2023
+HPL_pdgesv() end time   Wed Dec  6 10:29:30 2023
 
 --------------------------------------------------------------------------------
-||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   7.61567765e-03 ...... PASSED
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   2.98619320e-03 ...... PASSED
 ================================================================================
 T/V                N    NB     P     Q               Time                 Gflops
 --------------------------------------------------------------------------------
-WR11C2L2        1000     1     1     2               0.07             9.0205e+00
-HPL_pdgesv() start time Mon Dec  4 23:18:54 2023
+WR11C2L2        2200   200     5     5               0.05             1.3479e+02
+HPL_pdgesv() start time Wed Dec  6 10:29:30 2023
 
-HPL_pdgesv() end time   Mon Dec  4 23:18:54 2023
+HPL_pdgesv() end time   Wed Dec  6 10:29:30 2023
 
 --------------------------------------------------------------------------------
-||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   7.61567765e-03 ...... PASSED
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   2.98619320e-03 ...... PASSED
 ================================================================================
 
 Finished      3 tests with the following results:

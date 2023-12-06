@@ -27,7 +27,7 @@ while true; do
             echo "Working on HPL Benchmark ..."
             echo ""
             #source $Benchmark_path/HPL/1.HPL_running.sh
-            source $Benchmark_path/HPL/3.HPL_running.sh
+            source $Benchmark_path/HPL/4.HPL_running.sh
             ;;
         2)
             echo "Working on HPCG ..."
