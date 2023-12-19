@@ -2,9 +2,9 @@
 
 CURRENT_DIR=$(pwd)
 
-Benchmark_path=$CURRENT_DIR/../Run
+RUN_PATH=$CURRENT_DIR/../Run
 
-#Benchmark_path="/home/hpctechtest/sanket/Benchmark_Suit/Run"
+#RUN_PATH="/home/hpctechtest/sanket/Benchmark_Suit/Run"
 
 
 while true; do
@@ -26,42 +26,42 @@ while true; do
         1)
             echo "Working on HPL Benchmark ..."
             echo ""
-            #source $Benchmark_path/HPL/1.HPL_running.sh
-            source $Benchmark_path/HPL/4.HPL_running.sh
+            #source $RUN_PATH/HPL/1.HPL_running.sh
+            source $RUN_PATH/HPL/4.HPL_running.sh
             ;;
         2)
             echo "Working on HPCG ..."
             echo ""
-            source $Benchmark_path/HPCG/3.HPCG_running.sh
+            source $RUN_PATH/HPCG/3.HPCG_running.sh
             ;;
         3)
             echo "Working on IO500 Benchmark ..."
-            source $Benchmark_path/IO500/2.IO500_Running_v2.sh
+            source $RUN_PATH/IO500/2.IO500_Running_v2.sh
             ;;
         4)
             echo "Working on SHOC Benchmark ..."
             echo ""
-            source $Benchmark_path/SHOC/1.Running_shoc.sh
+            source $RUN_PATH/SHOC/1.Running_shoc.sh
             ;;
         5)
             echo "Working on OSU Benchmark ..."
             echo ""
-            source $Benchmark_path/OSU/1.Running_OSU.sh
+            source $RUN_PATH/OSU/1.Running_OSU.sh
             ;;
         6)
             echo "Working on STREAM Benchmark .."
-            source $Benchmark_path/STREAM/1.STREAM_running.sh
+            source $RUN_PATH/STREAM/1.STREAM_running.sh
             echo ""
 
             ;;
         7)
             echo "Installing ALL Benchmarks .."
-            source $Benchmark_path/HPL/Script/6.Full_HPL.sh
-            source $Benchmark_path/HPCG/Script/4.Full_HPCG.sh
-            source $Benchmark_path/IO500/Script/4.Full_IO500.sh
-            source $Benchmark_path/SHOC/Script/5.Full_SHOC.sh
-            source $Benchmark_path/OSU/Script/4.Full_OSU.sh
-            source $Benchmark_path/STREAM/Script/4.Full_STREAM.sh
+            source $RUN_PATH/HPL/Script/6.Full_HPL.sh
+            source $RUN_PATH/HPCG/Script/4.Full_HPCG.sh
+            source $RUN_PATH/IO500/Script/4.Full_IO500.sh
+            source $RUN_PATH/SHOC/Script/5.Full_SHOC.sh
+            source $RUN_PATH/OSU/Script/4.Full_OSU.sh
+            source $RUN_PATH/STREAM/Script/4.Full_STREAM.sh
             ;;
         8)
             echo ""

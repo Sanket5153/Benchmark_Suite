@@ -2,7 +2,7 @@
 
 #CURRENT_DIR=$(pwd)
 
-Benchmark_path=$CURRENT_DIR/../Setup
+SHOC_path=$CURRENT_DIR/../Setup
 
 #----------------------------------------------------
 
@@ -11,17 +11,71 @@ echo "               Downloading Depenencies For SHOC Benchmark                 
 echo "-------------------------------------------------------------------------------"
 
 
-cd $Benchmark_path/SHOC/Dependencies
+cd $SHOC_path/SHOC/Dependencies
 
-wget https://ftp.gnu.org/gnu/gcc/gcc-7.5.0/gcc-7.5.0.tar.gz --no-check-certificate
+if [ -f "$SHOC_path/SHOC/Dependencies/gcc-7.5.0.tar.gz" ]; then
 
-wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.gz  --no-check-certificate
+        echo "GCC tar Found "
+echo "---------------------------------------------------------------------------------"
+else
 
-wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run  --no-check-certificate
+        wget https://ftp.gnu.org/gnu/gcc/gcc-7.5.0/gcc-7.5.0.tar.gz --no-check-certificate
+        echo "GCC Downloaded "
+        sleep 2
+        echo ""
+        echo ""
+echo "---------------------------------------------------------------------------------"
 
-git clone https://github.com/vetter/shoc.git
+fi
 
-tar -cvf shoc.tar.gz shoc/ 
+#--------------------------------------------------------------------
+
+if [ -f "$SHOC_path/SHOC/Dependencies/openmpi-4.1.4.tar.gz" ]; then
+
+        echo "OpenMPI tar found"
+echo "----------------------------------------------------------------------------------"
+else
+
+        wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.gz  --no-check-certificate
+        sleep 2
+        echo ""
+        echo ""
+echo "-----------------------------------------------------------------------------------"
+
+fi
+
+#--------------------------------------------------------------------
+
+if [ -f "$SHOC_path/SHOC/Dependencies/cuda_10.1.243_418.87.00_linux.run" ]; then
+
+        echo "CUDA tar found"
+echo "----------------------------------------------------------------------------------"
+else
+
+        wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run  --no-check-certificate
+        sleep 2
+        echo ""
+        echo ""
+echo "-----------------------------------------------------------------------------------"
+
+fi
+
+#---------------------------------------------------------------------
+
+if [ -f "$SHOC_path/SHOC/Dependencies/shoc.tar.gz" ]; then
+
+        echo "SHOC tar found"
+echo "----------------------------------------------------------------------------------"
+else
+
+        git clone https://github.com/vetter/shoc.git
+				tar -cvf shoc.tar.gz shoc/
+        sleep 2
+        echo ""
+        echo ""
+echo "-----------------------------------------------------------------------------------"
+
+fi
 
 echo "-------------------------------------------------------------------------------"
 echo "               All Dependencies For SHOC Benchmark Downloaded                  "

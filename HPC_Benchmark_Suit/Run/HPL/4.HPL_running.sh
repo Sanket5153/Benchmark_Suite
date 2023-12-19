@@ -39,7 +39,7 @@ export OMPI_MCA_btl=^openib
 mkdir -p $ROOT_DIR/Current_Benchmark/$current_datetime/
 
 #mpirun -np $MPI xhpl HPL.dat > ./Current_Benchmark/$current_datetime/$current_datetime.txt
-mpirun -np $MPI xhpl $ROOT_DIR/HPL.dat > $ROOT_DIR/Current_Benchmark/$current_datetime/HPL.txt
+mpirun -np $MPI xhpl $ROOT_DIR/HPL.dat 2>&1 | tee $ROOT_DIR/Current_Benchmark/$current_datetime/HPL.txt
 
 echo "HPL benchmark completed."
 

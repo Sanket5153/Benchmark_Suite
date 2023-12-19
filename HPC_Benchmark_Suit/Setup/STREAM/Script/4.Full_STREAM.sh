@@ -1,18 +1,18 @@
 #!/bin/bash
 
-export dep_path=$CURRENT_DIR/../Setup/STREAM/Dependencies
-export I_path=$CURRENT_DIR/../Setup/STREAM/Installation_Path
+export stream_dep_path=$CURRENT_DIR/../Setup/STREAM/Dependencies
+export stream_install_path=$CURRENT_DIR/../Setup/STREAM/Installation_Path
 
 
-if [ -d "$I_path/gcc-11.3.0/my_bin" ]; then
+if [ -d "$stream_install_path/gcc-11.3.0/my_bin" ]; then
 
-    export PATH=$I_path/gcc-11.3.0/my_bin/bin:$PATH
+    export PATH=$stream_install_path/gcc-11.3.0/my_bin/bin:$PATH
 
-    export INCLUDE=$I_path/gcc-11.3.0/my_bin/include:$INCLUDE
+    export INCLUDE=$stream_install_path/gcc-11.3.0/my_bin/include:$INCLUDE
 
-    export LD_LIBRARY_PATH=$I_path/gcc-11.3.0/my_bin/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/gcc-11.3.0/my_bin/lib:$LD_LIBRARY_PATH
 
-    export LD_LIBRARY_PATH=$I_path/gcc-11.3.0/my_bin/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/gcc-11.3.0/my_bin/lib64:$LD_LIBRARY_PATH
 
     echo "----------------------------------------------"
     echo "|                GCC Loaded                   |"
@@ -20,7 +20,7 @@ if [ -d "$I_path/gcc-11.3.0/my_bin" ]; then
 
 else
 
-    tar -xvf $dep_path/gcc-11.3.0.tar.gz
+    tar -xvf $stream_dep_path/gcc-11.3.0.tar.gz
 
     cd gcc-11.3.0
 
@@ -28,19 +28,19 @@ else
 
     mkdir my_bin
 
-    bash ./configure --prefix=$I_path/gcc-11.3.0/my_bin --disable-multilib
+    bash ./configure --prefix=$stream_install_path/gcc-11.3.0/my_bin --disable-multilib
 
     make -j40
 
     make install
 
-    export PATH=$I_path/gcc-11.3.0/my_bin/bin:$PATH
+    export PATH=$stream_install_path/gcc-11.3.0/my_bin/bin:$PATH
 
-    export INCLUDE=$I_path/gcc-11.3.0/my_bin/include:$INCLUDE
+    export INCLUDE=$stream_install_path/gcc-11.3.0/my_bin/include:$INCLUDE
 
-    export LD_LIBRARY_PATH=$I_path/gcc-11.3.0/my_bin/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/gcc-11.3.0/my_bin/lib:$LD_LIBRARY_PATH
 
-    export LD_LIBRARY_PATH=$I_path/gcc-11.3.0/my_bin/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/gcc-11.3.0/my_bin/lib64:$LD_LIBRARY_PATH
 
     echo "----------------------------------------------"
     echo "|                GCC Installed                 |"
@@ -50,15 +50,15 @@ fi
 
 #-------------------------------------------------------------------------------
 
-if [ -d "$I_path/openmpi-4.1.4/my_bin" ]; then
+if [ -d "$stream_install_path/openmpi-4.1.4/my_bin" ]; then
 
     echo ""
 
-    export PATH=$I_path/openmpi-4.1.4/my_bin/bin:$PATH
+    export PATH=$stream_install_path/openmpi-4.1.4/my_bin/bin:$PATH
 
-    export INCLUDE=$I_path/openmpi-4.1.4/my_bin/include:$INCLUDE
+    export INCLUDE=$stream_install_path/openmpi-4.1.4/my_bin/include:$INCLUDE
 
-    export LD_LIBRARY_PATH=$I_path/openmpi-4.1.4/my_bin/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/openmpi-4.1.4/my_bin/lib:$LD_LIBRARY_PATH
 
     echo "----------------------------------------------"
     echo "|                OpenMPI Loaded                |"
@@ -67,23 +67,23 @@ if [ -d "$I_path/openmpi-4.1.4/my_bin" ]; then
 else
 
 
-    tar -xvf $dep_path/openmpi-4.1.4.tar.gz
+    tar -xvf $stream_dep_path/openmpi-4.1.4.tar.gz
 
     cd openmpi-4.1.4
 
     mkdir my_bin
 
-    bash ./configure --prefix=$I_path/openmpi-4.1.4/my_bin --disable-multilib
+    bash ./configure --prefix=$stream_install_path/openmpi-4.1.4/my_bin --disable-multilib
 
     make -j40
 
     make install
 
-    export PATH=$I_path/openmpi-4.1.4/my_bin/bin:$PATH
+    export PATH=$stream_install_path/openmpi-4.1.4/my_bin/bin:$PATH
 
-    export INCLUDE=$I_path/openmpi-4.1.4/my_bin/include:$INCLUDE
+    export INCLUDE=$stream_install_path/openmpi-4.1.4/my_bin/include:$INCLUDE
 
-    export LD_LIBRARY_PATH=$I_path/openmpi-4.1.4/my_bin/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$stream_install_path/openmpi-4.1.4/my_bin/lib:$LD_LIBRARY_PATH
 
     cd ..
 
@@ -117,7 +117,7 @@ fi
 
 #---------------------------------------------------------------------------
 
-if [ -f "$I_path/memory-bandwidth-benchmarks/stream_avx512.bin" ]; then
+if [ -f "$stream_install_path/memory-bandwidth-benchmarks/stream_avx512.bin" ]; then
    echo " "
 
    echo "----------------------------------------------"
@@ -127,7 +127,7 @@ if [ -f "$I_path/memory-bandwidth-benchmarks/stream_avx512.bin" ]; then
 
 else
 
-    tar -xvf $dep_path/memory-bandwidth-benchmarks.tar.gz
+    tar -xvf $stream_dep_path/memory-bandwidth-benchmarks.tar.gz
 
     cd memory-bandwidth-benchmarks
 
@@ -137,9 +137,9 @@ else
 
     cd ../
 
-    mv memory-bandwidth-benchmarks/ $I_path/
+    mv memory-bandwidth-benchmarks/ $stream_install_path/
 
- #  bash $I_path/memory-bandwidth-benchmarks/run.sh
+ #  bash $stream_install_path/memory-bandwidth-benchmarks/run.sh
 
 
 
